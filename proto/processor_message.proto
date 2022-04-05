@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "./pb";
+
+message CPU {
+  // Brand of the cpu
+  string brand = 1;
+
+  /*
+   * Name of the c
+   */
+  string name = 2;
+  uint32 number_of_cores = 4;
+  uint32 number_of_threads= 5;
+  double min_ghz = 6;
+  double max_ghz = 7;
+}
