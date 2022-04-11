@@ -2,7 +2,7 @@ package serializer
 
 import (
 	"fmt"
-	 "github.com/golang/protobuf/proto"
+	"github.com/golang/protobuf/proto"
 	"io/ioutil"
 )
 
@@ -16,10 +16,8 @@ func WriteProtobufToBinaryFile(message proto.Message, filename string) error {
 	if err != nil {
 		return fmt.Errorf("cannot write binary data to the file : %v", err)
 	}
-
 	return nil
 }
-
 
 func ReadProtobufFromBinaryFile(filename string, message proto.Message) error {
 	data, err := ioutil.ReadFile(filename)
@@ -31,10 +29,8 @@ func ReadProtobufFromBinaryFile(filename string, message proto.Message) error {
 	if err != nil {
 		return fmt.Errorf("cannot unmarshal binary data into a message")
 	}
-
 	return nil
 }
-
 
 func WriteProtobufToJSONFile(message proto.Message, filename string) error {
 	data, err := ProtobufToJSON(message)
