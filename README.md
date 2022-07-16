@@ -12,7 +12,7 @@ To understand what gRPC is, we must first have a basic understanding of RPC (Rem
 
 <br>
 
-**gRPC**
+**`gRPC`**
 
 ---
 
