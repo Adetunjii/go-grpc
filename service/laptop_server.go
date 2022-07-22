@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"io"
+	"log"
+
 	"github.com/Adetunjii/go-grpc/pb"
 	"github.com/google/uuid"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"io"
-	"log"
 )
 
 type LaptopServer struct {
@@ -106,6 +107,9 @@ func (server *LaptopServer) SearchLaptop(req *pb.SearchLaptopRequest, stream pb.
 	return nil
 }
 
+//////////////////////////////////////////
+/// CLIENT SIDE STREAMING             ///
+/////////////////////////////////////////
 func (server *LaptopServer) UploadImage(stream pb.LaptopService_UploadImageServer) error {
 	req, err := stream.Recv()
 	if err != nil {
